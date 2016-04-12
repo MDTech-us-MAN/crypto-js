@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Copyright (c) 2016 Maxwell Dreytser
+
 for D in `find . -type d`;
 do
 	if [[ $D != *'.git'* ]]; then
@@ -41,7 +43,7 @@ do
 			for SubFile in `find -mindepth 1 -maxdepth 1 -not -path '*/\.*' -type f`; do
 				MySubFile=${SubFile/\.\//};
 				
-				if [[ $MySubFile != index.html ]]; then
+                                if [[ $MySubFile != 'index.html' && $MySubFile != 'genHtml.sh' ]]; then
 					echo "    $MySubFile";
 				
 			echo '            <tr>' >> index.html;
